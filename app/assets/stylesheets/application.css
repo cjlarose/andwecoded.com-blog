@@ -12,3 +12,7 @@
  *= require_tree .
  *= require bootstrap
  */
+
+ .nav {
+ 	margin-bottom: 1em !important;
+ }
