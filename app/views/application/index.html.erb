@@ -1,17 +1,10 @@
-					<div>
-						<h3><strong>Hello World</strong> <small>Thu Nov 1, 2013 <span class="label label-primary">New</span></small></h3>						
-					</div>					
-					<div>
-						<h3><strong>ASP.Net MVC 5</strong> <small>Thu Nov 1, 2013 <span class="label label-default">ASP.Net</span></small></h3>
-						<p>Is extremely interesting and similar to Rails. Working in the MS development stack has it's upsides but doesn't have that same <em>feel</em> that open source does.</p>
-					</div>					
-					<div>
-						<h3><strong>Visual Studio Ultimate 2013</strong> <small>Thu Nov 1, 2013</small></h3>
-						<p>Not sure why VS 2013 Ultimate isn't offered though Microsoft's regular pipelines. Fortunately, Premium is offered free through MSDNAA and is comparable to Ultimate in features. When I start to feel
-						disappointed; I remember that it's free anyways..</p>
-					</div>					
-					<div>
-						<h3><strong>Collections.sort</strong> <small>Thu Nov 1, 2013 <span class="label label-default">Java</span></small></h3>
-						<p>Is very hard to beat. Unless you know something it doesn't know. Riddle, riddle, the cat played a fiddle...?</p>
-						<pre>// Insertion sort &#10;sort (list, left, right) {&#10;&#09;// Do something here&#10;}</pre>
-					</div>
+<% @posts.each do |post| %>
+	<div>
+		<h3><strong><%= post.title %></strong> <small>Thu Nov 1, 2013 <span class="label label-primary">
+			<% post.labels.each do |label| %>
+				<%= Topic.find(label.topic_id).abbrev %>
+			<% end %>
+		</span></small></h3>
+		<%= raw(post.text) %>						
+	</div>
+<% end %>
