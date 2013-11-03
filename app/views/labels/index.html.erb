@@ -14,8 +14,8 @@
   <tbody>
     <% @labels.each do |label| %>
       <tr>
-        <td><%= label.topic_id %></td>
-        <td><%= label.post_id %></td>
+        <td><%= Topic.find(label.topic_id).abbrev %></td>
+        <td><%= Post.find(label.post_id).title %></td>
         <td><%= link_to 'Show', label %></td>
         <td><%= link_to 'Edit', edit_label_path(label) %></td>
         <td><%= link_to 'Destroy', label, method: :delete, data: { confirm: 'Are you sure?' } %></td>

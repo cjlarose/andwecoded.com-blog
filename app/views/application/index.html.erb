@@ -1,10 +1,15 @@
 <% @posts.each do |post| %>
 	<div>
-		<h3><strong><%= post.title %></strong> <small>Thu Nov 1, 2013 <span class="label label-primary">
-			<% post.labels.each do |label| %>
-				<%= Topic.find(label.topic_id).abbrev %>
-			<% end %>
-		</span></small></h3>
+		<h3><strong><%= post.title %></strong>
+			<small>
+				<%= l post.created_at, format: :short %>
+				<% post.labels.each do |label| %>
+					<span class="label label-primary">
+						<%= Topic.find(label.topic_id).abbrev %>
+					</span>
+				<% end %>
+			</small>
+		</h3>
 		<%= raw(post.text) %>						
 	</div>
 <% end %>

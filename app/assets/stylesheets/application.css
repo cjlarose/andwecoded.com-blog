@@ -16,3 +16,11 @@
  .nav {
  	margin-bottom: 1em !important;
  }
+
+#footer {
+	height: 3em;
+}
+
+.label {
+	margin-right: .25em !important;
+}
