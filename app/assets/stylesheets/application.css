@@ -13,9 +13,14 @@
  *= require bootstrap
  */
 
- .nav {
+.nav {
  	margin-bottom: 1em !important;
- }
+}
+
+#info { 
+	padding-top: 10px;
+	text-align: right;
+}
 
 #footer {
 	height: 3em;
@@ -27,4 +32,8 @@
 
 .twitter { 
 	margin-bottom: .5em;
+}
+
+.page-header {
+	margin-top: 0 !important;
 }

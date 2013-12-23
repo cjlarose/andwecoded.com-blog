@@ -1,5 +1,14 @@
 Blog::Application.routes.draw do
   devise_for :admins
+
+  devise_scope :admin do
+    get "/login" => "devise/sessions#new"
+  end
+
+  devise_scope :admin do
+    get "/logout" => "devise/sessions#destroy"
+  end
+
   resources :labels
 
   resources :posts
@@ -11,8 +20,6 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#index'
-
-  get 'admin' => 'admin#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

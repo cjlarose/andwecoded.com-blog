@@ -13,25 +13,23 @@
 				<h1><code>And We Coded</code><small> and we had a really, really good time</small></h1>				
 			</div>
 			<div class="row">
-				<div class="col-md-12">
-					<p class="notice"><%= notice %></p>
-					<p class="alert"><%= alert %></p>
-				</div>
 				<div class="col-md-8">
 					<%= yield %>					
 				</div>
 				<div class="col-md-4">
-					<ul class="list-group">			
-						<li class="list-group-item">
-    						<%= link_to "Home", root_path %>
-						</li>
-						<li class="list-group-item">
-    						<%= link_to "Posts", posts_path %>
-    					</li>
-						<li class="list-group-item">
-    						<a href="http://andwecoded.com/apps">Apps</a>
-						</li>
-					</ul>
+					<% if @debug %>
+						<ul class="list-group">			
+							<li class="list-group-item">
+	    						<%= link_to "Home", root_path %>
+							</li>
+							<li class="list-group-item">
+	    						<%= link_to "Posts", posts_path %>
+	    					</li>
+							<li class="list-group-item">
+	    						<a href="http://andwecoded.com/apps">Apps</a>
+							</li>
+						</ul>
+					<% end %>
 					<div class="twitter">
 						<a href="https://twitter.com/chillinbob" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @chillinbob</a>
 					</div>
