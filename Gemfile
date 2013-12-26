@@ -9,6 +9,8 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'mysql2'
 
+gem 'font-awesome-rails'
+
 # User authentication
 gem 'devise'
 
