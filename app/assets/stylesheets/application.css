@@ -19,13 +19,11 @@
 	height: 5em;
 }
 
-.label {
-	margin-right: .25em !important;
-}
-
 .twitter { 
 	margin-bottom: .5em;
 }
+
+/* Bootstrap modifications */
 
 .page-header {
 	background-color: #eee;
@@ -41,4 +39,8 @@
 .post a, .post a:visited {
 	color: #428bca !important;
 	text-decoration: underline;
+}
+
+.label {
+	margin-right: .25em !important;
 }

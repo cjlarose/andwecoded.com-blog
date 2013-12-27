@@ -1,15 +1,38 @@
-<% @posts.each do |post| %>
-	<div class="post">
-		<h3><strong><%= post.title %></strong>
-			<small>
-				<%= l post.created_at, format: :short %>
-				<% post.labels.each do |label| %>
-					<span class="label label-primary">
-						<%= Topic.find(label.topic_id).abbrev %>
-					</span>
-				<% end %>
-			</small>
-		</h3>
-		<%= raw(post.text) %>						
+<div class="row">
+	<div class="col-md-9">
+		<% @posts.each do |post| %>
+			<div class="post">
+				<h3><strong><%= post.title %></strong>
+					<small>
+						<%= l post.created_at, format: :short %>
+						<% post.labels.each do |label| %>
+							<span class="label label-primary">
+								<%= Topic.find(label.topic_id).abbrev %>
+							</span>
+						<% end %>
+					</small>
+				</h3>
+				<%= raw(post.text) %>						
+			</div>
+		<% end %>				
 	</div>
-<% end %>
+	<div class="col-md-3">
+		<% if @debug %>
+			<ul class="list-group">			
+				<li class="list-group-item">
+					<%= link_to "Home", root_path %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Posts", posts_path %>
+				</li>
+				<li class="list-group-item">
+					<a href="http://andwecoded.com/apps">Apps</a>
+				</li>
+			</ul>
+		<% end %>
+		<div class="twitter">
+			<a href="https://twitter.com/chillinbob" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @chillinbob</a>
+		</div>
+		<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/112588393871548900625" data-rel="author"></div>
+	</div>
+</div>

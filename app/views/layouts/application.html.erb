@@ -17,30 +17,7 @@
 			  <li><a href="#"><i class="fa fa-folder-open fa-fw"></i> Projects</a></li>
 			  <li><a href="#"><i class="fa fa-info-circle fa-fw"></i> Info</a></li>
 			</ul>
-			<div class="row">
-				<div class="col-md-9">
-					<%= yield %>					
-				</div>
-				<div class="col-md-3">
-					<% if @debug %>
-						<ul class="list-group">			
-							<li class="list-group-item">
-	    						<%= link_to "Home", root_path %>
-							</li>
-							<li class="list-group-item">
-	    						<%= link_to "Posts", posts_path %>
-	    					</li>
-							<li class="list-group-item">
-	    						<a href="http://andwecoded.com/apps">Apps</a>
-							</li>
-						</ul>
-					<% end %>
-					<div class="twitter">
-						<a href="https://twitter.com/chillinbob" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @chillinbob</a>
-					</div>
-					<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/112588393871548900625" data-rel="author"></div>
-				</div>
-			</div>
+			<%= yield %>
 			<div id="footer">
 			</div>				
 		</div>
