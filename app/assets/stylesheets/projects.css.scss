@@ -8,10 +8,6 @@
 	padding: .5em;
 }
 
-.no-left-border { 
-	border-left: none !important;
-}
-
 .peru {
 	background-image: url(peru-blog-long.png);
 }
@@ -38,8 +34,16 @@
 		padding: 0 15px !important;
 	}
 
+	.no-left-border { 
+		border-left: none !important;
+	}
+
+	.no-left-padding {
+		padding-left: 0 !important;
+	}	
+
 	.project-thumbs > div {
-		padding: 0 !important;
+		//padding: 0 !important;
 	}
 
 	.grid-box {
