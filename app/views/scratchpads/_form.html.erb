@@ -1,0 +1,25 @@
+<%= form_for(@scratchpad) do |f| %>
+  <% if @scratchpad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scratchpad.errors.count, "error") %> prohibited this scratchpad from being saved:</h2>
+
+      <ul>
+      <% @scratchpad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

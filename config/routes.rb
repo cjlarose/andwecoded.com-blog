@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :scratchpads
+
   devise_for :admins
 
   devise_scope :admin do

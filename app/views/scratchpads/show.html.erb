@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @scratchpad.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @scratchpad.body %>
+</p>
+
+<%= link_to 'Edit', edit_scratchpad_path(@scratchpad) %> |
+<%= link_to 'Back', scratchpads_path %>
