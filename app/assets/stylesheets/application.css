@@ -39,12 +39,25 @@
 a {
 	text-decoration: underline !important;
 }
+
+a:visited {
+	color: #428bca !important;
+}
+
 .nav a {
 	text-decoration: none !important;
 }
 
-.post a, .post a:visited {
+.nav a:visited {
+	color: #666 !important;
+}
+
+.nav a:hover {
 	color: #428bca !important;
+}
+
+.nav {
+	margin-bottom: 5px !important;
 }
 
 .label {
@@ -53,4 +66,8 @@ a {
 
 .bottom-padded-col {
 	padding-bottom: 1em !important;
+}
+
+.sml-margin-top {
+	margin-top: 5px !important;
 }

@@ -1,8 +1,12 @@
 <div class="row">
 	<div class="col-md-9 bottom-padded-col">
-		<% @posts.each do |post| %>
+		<% @posts.each_with_index do |post, index| %>
+			<% if index == 0 %>
+				<% css_class = "class=sml-margin-top" %>
+			<% end if %>
+
 			<div class="post">
-				<h3><strong><%= post.title %></strong>
+				<h3 <%= css_class %>><strong><%= post.title %></strong>
 					<small>
 						<%= l post.created_at, format: :short %>
 						<% post.labels.each do |label| %>

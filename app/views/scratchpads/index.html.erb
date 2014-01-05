@@ -1,8 +1,12 @@
 <div class="row">
 	<div class="col-md-9 bottom-padded-col">
-		<% @scratchpads.each do |sp| %>
+		<% @scratchpads.each_with_index do |sp, index| %>
 			<article>
-				<h3><strong><%= sp.title %></strong></h3>
+				<% if index == 0 %>
+					<% css_class = "class=sml-margin-top" %>
+				<% end if %>
+
+				<h3 <%= css_class %>><strong><%= sp.title %></strong></h3>
 				<h6><%= sp.created_at.strftime("%m/%d/%Y") %></h6>
 				<p><%= raw sp.preview %></p>
 				<%= link_to 'View', sp %>
