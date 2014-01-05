@@ -1,29 +1,14 @@
-<h1>Listing scratchpads</h1>
+<h1>Scratch Pads</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
     <% @scratchpads.each do |scratchpad| %>
-      <tr>
         <td><%= scratchpad.title %></td>
         <td><%= scratchpad.body %></td>
         <td><%= link_to 'Show', scratchpad %></td>
         <td><%= link_to 'Edit', edit_scratchpad_path(scratchpad) %></td>
         <td><%= link_to 'Destroy', scratchpad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
-
-<%= link_to 'New Scratchpad', new_scratchpad_path %>
