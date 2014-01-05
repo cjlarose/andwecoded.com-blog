@@ -17,7 +17,7 @@
 			  <li><a href="/blog/projects"><i class="fa fa-folder-open fa-fw"></i> Projects</a></li>
 			  <li><a href="/blog/scratchpads"><i class="fa fa-laptop fa-fw"></i> Scratch Pads</a></li>
 			</ul>
-			<%= yield %>
+			<%= content_for?(:content) ? yield(:content) : yield %>
 			<div id="footer">
 				<div class="container">
 					<h6>Andwecoded.com was was created using <a href="http://rubyonrails.org/">Rails 4</a> and its source can be found on <i class="fa fa-github fa-fw fa-lg"></i> <a href="http://www.github.com">here</a>. 2013</h6>

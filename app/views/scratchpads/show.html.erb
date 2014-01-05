@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-md-12">
+	<ol class="breadcrumb">
+		<li><a href="/blog/scratchpads">Scratch Pads</a></li>
+		<li class="active"><%= @scratchpad.title %></li>
+	</ol>
 		<h2><%= @scratchpad.title %></h2>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
 		<%= raw @scratchpad.body %>
 	</div>
 </div>

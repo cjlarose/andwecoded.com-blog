@@ -19,10 +19,6 @@
 	position: relative;
 }
 
-#footer a {
-	text-decoration: underline;
-}
-
 .twitter { 
 	margin-bottom: .5em;
 }
@@ -40,11 +36,21 @@
     color: #000 !important;
 }
 
+a {
+	text-decoration: underline !important;
+}
+.nav a {
+	text-decoration: none !important;
+}
+
 .post a, .post a:visited {
 	color: #428bca !important;
-	text-decoration: underline;
 }
 
 .label {
 	margin-right: .25em !important;
+}
+
+.bottom-padded-col {
+	padding-bottom: 1em !important;
 }
