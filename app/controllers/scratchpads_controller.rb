@@ -1,6 +1,6 @@
 class ScratchpadsController < ApplicationController
   before_action :set_scratchpad, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!, :except => [:index]
+  before_filter :authenticate_admin!, :except => [:index, :show]
 
   # GET /scratchpads
   # GET /scratchpads.json
@@ -15,7 +15,6 @@ class ScratchpadsController < ApplicationController
 
   # GET /scratchpads/new
   def new
-    before_filter :authenticate_admin!
     @scratchpad = Scratchpad.new
   end
 

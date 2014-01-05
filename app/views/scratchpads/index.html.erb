@@ -1,5 +1,12 @@
 <div class="row">
-	<div class="col-md-12">
-			<h3>Random stuff</h3>
+	<div class="col-md-9">
+		<% @scratchpads.each do |sp| %>
+			<article>
+				<h3><strong><%= sp.title %></strong></h3>
+				<h6>Created <%= sp.created_at.strftime("%m/%d/%Y") %></h6>
+				<p><%= raw sp.preview %></p>
+				<%= link_to 'View', sp %>
+			</article>
+		<% end %>
 	</div>
 </div>

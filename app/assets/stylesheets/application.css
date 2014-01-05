@@ -16,7 +16,11 @@
 
 #footer {
 	background-color: #eee;
-	height: 5em;
+	position: relative;
+}
+
+#footer a {
+	text-decoration: underline;
 }
 
 .twitter { 
