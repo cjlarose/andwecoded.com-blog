@@ -1,3 +1,26 @@
+== Andwecoded.com
+
+Created by Homero Pawlowski. 
+
+== Back end
+
+* Rails 4
+
+* Ruby 2.0
+
+* MySQL
+
+== Front end
+
+Bootstrap
+
+Devise
+
+Sass
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
