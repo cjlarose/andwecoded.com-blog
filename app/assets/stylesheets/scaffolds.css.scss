@@ -96,6 +96,14 @@ div {
   text-align: center;
 }
 
+.sml-margin-top {
+  margin-top: 5px !important;
+}
+
+#commits {
+  padding-left: 15px;
+}
+
 // bootstrap class
 .page-header {
   background-color: #eee;
@@ -132,8 +140,4 @@ a:visited {
   a:hover {
      color: #428bca !important;
   }
-}
-
-.sml-margin-top {
-  margin-top: 5px !important;
 }
