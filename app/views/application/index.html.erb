@@ -6,7 +6,7 @@
 			<% end if %>
 
 			<div class="post">
-				<h3 <%= css_class %>><strong><%= post.title %></strong>
+				<h2 <%= css_class %>><strong><%= post.title %></strong>
 					<small>
 						<%= l post.created_at, format: :short %>
 						<% post.labels.each do |label| %>
@@ -15,7 +15,7 @@
 							</span>
 						<% end %>
 					</small>
-				</h3>
+				</h2>
 				<%= raw(post.text) %>						
 			</div>
 		<% end %>				
