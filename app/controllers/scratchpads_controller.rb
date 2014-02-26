@@ -5,7 +5,7 @@ class ScratchpadsController < ApplicationController
   # GET /scratchpads
   # GET /scratchpads.json
   def index
-    @scratchpads = Scratchpad.all
+    @scratchpads = Scratchpad.all.order('created_at DESC')
   end
 
   # GET /scratchpads/1
