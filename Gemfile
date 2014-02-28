@@ -8,6 +8,9 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'mysql2'
 
+# Getting controller variables to view javascript easily
+gem 'gon'
+
 # Font awesome
 gem 'font-awesome-rails'
 

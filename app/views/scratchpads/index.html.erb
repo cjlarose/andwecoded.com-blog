@@ -1,5 +1,16 @@
 <div class="row">
-	<div class="col-md-8">
+	<div class="sidebar col-md-4 col-md-push-8">
+		<div>
+			<h4>Scratchpads</h4>
+			<p>Different technological pursuits catch my interest from time to time. This is my attempt at logging them.</p>		
+			<ul class="link-list">
+				<% @scratchpads.each do |sp| %>
+					<li><%= link_to sp.title, sp %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-pull-4">
 		<% @scratchpads.each_with_index do |sp, index| %>
 			<div class="post">
 				<% if index == 0 %>
@@ -12,16 +23,5 @@
 				<%= link_to 'View', sp %>
 			</div>
 		<% end %>			
-	</div>
-	<div class="sidebar col-md-4">
-		<div>
-			<h4>Scratchpads</h4>
-			<p>Different technological pursuits catch my interest from time to time. This is my attempt at logging them.</p>		
-			<ul class="link-list">
-				<% @scratchpads.each do |sp| %>
-					<li><%= link_to sp.title, sp %></li>
-				<% end %>
-			</ul>
-		</div>
 	</div>
 </div>

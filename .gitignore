@@ -20,3 +20,4 @@ database.yml
 sftp-config.json
 .ruby-gemset
 .ruby-version
+Gemfile.lock

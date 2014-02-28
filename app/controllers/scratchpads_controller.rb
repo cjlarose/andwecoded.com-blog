@@ -16,10 +16,12 @@ class ScratchpadsController < ApplicationController
   # GET /scratchpads/new
   def new
     @scratchpad = Scratchpad.new
+    gon.scratchpad = @scratchpad
   end
 
   # GET /scratchpads/1/edit
   def edit
+    gon.scratchpad = @scratchpad
   end
 
   # POST /scratchpads
@@ -70,6 +72,6 @@ class ScratchpadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scratchpad_params
-      params.require(:scratchpad).permit(:title, :body)
+      params.require(:scratchpad).permit(:title, :body, :preview)
     end
 end

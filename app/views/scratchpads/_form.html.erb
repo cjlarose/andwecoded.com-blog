@@ -1,29 +1,47 @@
-<%= form_for(@scratchpad) do |f| %>
-  <% if @scratchpad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@scratchpad.errors.count, "error") %> prohibited this scratchpad from being saved:</h2>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for(@scratchpad) do |f| %>
+      <% if @scratchpad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@scratchpad.errors.count, "error") %> prohibited this scratchpad from being saved:</h2>
 
-      <ul>
-      <% @scratchpad.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @scratchpad.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
+      <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, { "data-bind" => 'value: previewTitle, valueUpdate: \'input\'' } %>
+      </div>
+      <div class="field">
+        <%= f.label :preview %><br>
+        <%= f.text_area :preview, { :rows => "5", "data-bind" => 'value: previewShort, valueUpdate: \'input\'' } %>
+      </div>
+      <div class="field">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, { "data-bind" => 'value: previewBody, valueUpdate: \'input\'' }  %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :preview %><br>
-    <%= f.text_area :preview %>
+  <div class="col-md-6">
+      <h2 data-bind="text: previewTitle"></h2>
+      <div data-bind="html: previewShort"></div>
+      <div data-bind="html: previewBody"></div>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<script>
+  var viewModel = {
+    previewTitle: ko.observable(gon.scratchpad.title),
+    previewShort: ko.observable(gon.scratchpad.preview),
+    previewBody: ko.observable(gon.scratchpad.body)
+  };
+
+  ko.applyBindings(viewModel);
+</script>
