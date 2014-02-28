@@ -1,37 +1,41 @@
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-8">
 		<% @posts.each_with_index do |post, index| %>
 			<% if index == 0 %>
 				<% css_class = "class=sml-margin-top" %>
 			<% end if %>
 
 			<div class="post">
-				<h2 <%= css_class %>><strong><%= post.title %></strong>
-					<small>
-						<%= l post.created_at, format: :short %>
-						<% post.labels.each do |label| %>
-							<span class="label label-primary">
-								<%= Topic.find(label.topic_id).abbrev %>
-							</span>
-						<% end %>
-					</small>
-				</h2>
-				<%= raw(post.text) %>						
+				<h1 <%= css_class %>>
+					<%= post.title %>
+				</h1>
+				<h4>
+					<%= l post.created_at, format: :short %>						
+					<% post.labels.each do |label| %>
+								<span class="label label-primary">
+									<%= Topic.find(label.topic_id).abbrev %>
+								</span>
+					<% end %>					
+				</h4>					
+				<%= raw(post.text) %>
 			</div>
 		<% end %>				
 	</div>
-	<div class="col-md-3">
+	<div class="sidebar col-md-4">
+		<div>
+			<h4>About</h4>
+			<p>This site was created by Homero Pawlowski. A soon to be Computer Science major from the University of Arizona. </p>
+			<h4>Commits</h4>
+			<p><strong>And We Coded</strong> is constantly being developed and changed. Here are the 5 latest commits to the website according to GitHub</p>			
+			<ul id="commits-list" class="link-list">
+			</ul>
+		</div>
 		<div id="social">
+			<h4>Social</h4>
 			<div class="twitter">
 				<a href="https://twitter.com/chillinbob" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @chillinbob</a>
 			</div>
 			<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/112588393871548900625" data-rel="author"></div>
-		</div>
-		<div id="commits">
-			<p>Andwecoded.com is constantly being developed and changed. Here are the 5 latest commits to the website according to GitHub</p>
-			<h4 id="commits-header">Commits</h4>
-			<ul id="commits-list">
-			</ul>
 		</div>
 	</div>
 </div>

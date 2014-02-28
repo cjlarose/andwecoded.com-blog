@@ -1,16 +1,27 @@
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-8">
 		<% @scratchpads.each_with_index do |sp, index| %>
-			<article>
+			<div class="post">
 				<% if index == 0 %>
 					<% css_class = "class=sml-margin-top" %>
 				<% end if %>
 
-				<h3 <%= css_class %>><strong><%= sp.title %></strong></h3>
-				<h6><%= sp.created_at.strftime("%m/%d/%Y") %></h6>
+				<h3 <%= css_class %>><%= sp.title %></h3>
+				<h4><%= sp.created_at.strftime("%m/%d/%Y") %></h4>
 				<p><%= raw sp.preview %></p>
 				<%= link_to 'View', sp %>
-			</article>
-		<% end %>
+			</div>
+		<% end %>			
+	</div>
+	<div class="sidebar col-md-4">
+		<div>
+			<h4>Scratchpads</h4>
+			<p>Different technological pursuits catch my interest from time to time. This is my attempt at logging them.</p>		
+			<ul class="link-list">
+				<% @scratchpads.each do |sp| %>
+					<li><%= link_to sp.title, sp %></li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </div>

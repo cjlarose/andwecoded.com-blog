@@ -8,8 +8,7 @@ body {
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.1em;
 }
 
 pre {
@@ -139,6 +138,27 @@ a:visited {
   }
 }
 
+.post {
+  h4 {
+    color: #888;
+  }
+}
+
 .sml-margin-top {
   margin-top: 5px !important;
+}
+
+.sidebar {
+  h4 {
+    color: #c7254e;
+  }
+}
+
+.link-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 5px;
+  }
 }
