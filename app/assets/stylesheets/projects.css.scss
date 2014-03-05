@@ -6,6 +6,16 @@
 	//background-color: red;
 	height: 100px;
 	padding: .5em;
+
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+
+	a:hover {
+		background-color: transparent;
+	}
 }
 
 .peru {
